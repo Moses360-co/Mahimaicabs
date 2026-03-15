@@ -1,0 +1,121 @@
+/* =====================
+   VARIABLES
+===================== */
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =====================
+   PAGE LAYOUT
+===================== */
+.select-days {
+  background: #ffffff;
+  min-height: 100vh;
+  padding: 28px;
+  animation: fadeUp 0.6s ease;
+}
+
+/* =====================
+   BACK BUTTON
+===================== */
+.select-days button:first-child {
+  background: transparent;
+  border: none;
+  color: #1f3b4d;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 22px;
+  transition: 0.35s ease;
+}
+.select-days button:first-child:hover {
+  color: #d4b35f;
+  transform: translateX(-5px);
+}
+
+/* =====================
+   VEHICLE TITLE
+===================== */
+.select-days h2 {
+  font-size: 32px;
+  color: #1f3b4d;
+  margin-bottom: 26px;
+  animation: fadeUp 0.7s ease;
+}
+
+/* =====================
+   DAY PACKAGE CARD
+===================== */
+.select-days > div {
+  background: #f7f9fc;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease;
+  transition: 0.35s ease;
+}
+.select-days > div:hover {
+  transform: translateY(-6px);
+}
+.select-days > div h3 {
+  font-size: 20px;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+.select-days > div p {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.select-days > div p:last-of-type {
+  font-weight: 600;
+  color: #1f3b4d;
+  margin-top: 10px;
+}
+
+/* =====================
+   SELECT BUTTON
+===================== */
+.select-days > div button {
+  margin-top: 14px;
+  background: linear-gradient(135deg, #1f3b4d, rgb(16.3611111111, 31.1388888889, 40.6388888889));
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+.select-days > div button:hover {
+  background: linear-gradient(135deg, #d4b35f, rgb(203.357635468, 163.7251231527, 62.842364532));
+  color: #1f3b4d;
+  transform: translateY(-4px);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .select-days h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 480px) {
+  .select-days {
+    padding: 16px;
+  }
+  .select-days > div button {
+    width: 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=SelectDays.css.map */

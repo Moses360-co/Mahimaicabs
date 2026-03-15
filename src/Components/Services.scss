@@ -1,0 +1,173 @@
+/* ===============================
+   VARIABLES
+================================ */
+
+$primary-dark: #0f2027;
+$secondary-dark: #203a43;
+$gold: #d4b35f;
+$text-light: #e0e0e0;
+$white: #ffffff;
+$radius: 18px;
+$shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+$transition: 0.4s ease;
+
+/* ===============================
+   PAGE WRAPPER
+================================ */
+
+.services-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, $primary-dark, $secondary-dark);
+  animation: fadeIn 1s ease;
+}
+
+/* ===============================
+   SERVICE CARD
+================================ */
+
+.service-card {
+  width: 100%;
+  max-width: 420px;
+  background: $white;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease forwards;
+
+  &:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+/* ===============================
+   IMAGE
+================================ */
+
+.service-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.service-details {
+  padding: 28px;
+  text-align: center;
+
+  h2 {
+    color: $primary-dark;
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+
+  p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* ===============================
+   WHATSAPP BUTTON
+================================ */
+
+.booking-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 26px;
+  background: $gold;
+  color: $white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 40px;
+  transition: $transition;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: darken($gold, 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .services-page {
+    padding: 60px 15px;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .service-details {
+    padding: 22px;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .booking-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-image {
+    height: 180px;
+  }
+
+  .service-details h2 {
+    font-size: 20px;
+  }
+}

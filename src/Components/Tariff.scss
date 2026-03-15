@@ -1,0 +1,169 @@
+// ===========================
+// MAIN COLOR PALETTE
+// ===========================
+$primary-dark: #0f2027;
+$secondary-dark: #203a43;
+$gold: #d4b35f;
+$text-light: #e0e0e0;
+$white: #ffffff;
+$transition: 0.35s ease;
+
+// ===========================
+// ANIMATIONS
+// ===========================
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ===========================
+// PAGE LAYOUT
+// ===========================
+.tariff-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  padding: 24px;
+  background: $text-light;
+}
+
+// ===========================
+// CARD
+// ===========================
+.tariff-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(15, 32, 39, 0.25);
+  animation: slideFade 0.6s ease both;
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 42px rgba(15, 32, 39, 0.35);
+  }
+}
+
+// ===========================
+// VEHICLE IMAGE & TITLE
+// ===========================
+.vehicle-image {
+  text-align: center;
+  margin-bottom: 14px;
+
+  img {
+    width: 100%;
+    max-width: 220px;
+    object-fit: contain;
+  }
+
+  h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary-dark;
+  }
+}
+
+// ===========================
+// SECTION
+// ===========================
+.tariff-section {
+  border: 2px solid $gold;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+
+  h3 {
+    background: rgba(212, 179, 95, 0.22);
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $primary-dark;
+    letter-spacing: 0.4px;
+  }
+}
+
+// ===========================
+// ITEM
+// ===========================
+.tariff-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: $secondary-dark;
+  border-top: 1px solid rgba(32, 58, 67, 0.15);
+  transition: background $transition, transform $transition;
+
+  svg {
+    font-size: 16px;
+    color: $gold;
+  }
+
+  &:hover {
+    background: rgba(212, 179, 95, 0.12);
+    transform: translateX(5px);
+  }
+}
+
+// ===========================
+// BUTTON
+// ===========================
+.book-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: $primary-dark;
+  background: linear-gradient(
+    135deg,
+    lighten($gold, 6%),
+    darken($gold, 6%)
+  );
+  transition: all $transition;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(15, 32, 39, 0.35);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+// ===========================
+// MOBILE RESPONSIVE
+// ===========================
+@media (max-width: 480px) {
+  .tariff-page {
+    padding: 14px;
+    gap: 16px;
+  }
+
+  .tariff-card {
+    padding: 16px;
+  }
+
+  .tariff-item {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .vehicle-image img {
+    max-width: 190px;
+  }
+}

@@ -1,0 +1,124 @@
+/* ======================
+   VARIABLES
+====================== */
+/* ======================
+   PAGE LAYOUT
+====================== */
+.select-vehicle {
+  background: #ffffff;
+  min-height: 100vh;
+  padding: 40px 30px;
+}
+
+/* ======================
+   BACK BUTTON
+====================== */
+.btn-back {
+  background: transparent;
+  border: none;
+  color: #1f3b4d;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+.btn-back:hover {
+  color: #d4b35f;
+}
+
+/* ======================
+   TITLE
+====================== */
+.select-vehicle h2 {
+  font-size: 30px;
+  color: #1f3b4d;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+/* ======================
+   VEHICLE GRID LAYOUT
+====================== */
+.select-vehicle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Make title and back button full width */
+.select-vehicle h2,
+.select-vehicle .btn-back {
+  grid-column: 1/-1;
+}
+
+/* ======================
+   VEHICLE CARD
+====================== */
+.select-vehicle > div {
+  background: #f4f6f9;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  transition: 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-vehicle > div:hover {
+  transform: translateY(-6px);
+}
+
+/* ======================
+   VEHICLE IMAGE FIX
+====================== */
+.select-vehicle img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover; /* important */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* ======================
+   VEHICLE NAME
+====================== */
+.select-vehicle h3 {
+  font-size: 18px;
+  color: #2e2e2e;
+  margin-bottom: 15px;
+  flex-grow: 1; /* keeps button aligned */
+}
+
+/* ======================
+   SELECT BUTTON
+====================== */
+.select-vehicle div button {
+  background: linear-gradient(135deg, #1f3b4d, rgb(19.2888888889, 36.7111111111, 47.9111111111));
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.select-vehicle div button:hover {
+  background: linear-gradient(135deg, #d4b35f, rgb(203.357635468, 163.7251231527, 62.842364532));
+  color: #1f3b4d;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 768px) {
+  .select-vehicle {
+    padding: 25px 15px;
+  }
+  .select-vehicle img {
+    height: 180px;
+  }
+}/*# sourceMappingURL=SelectVehicle.css.map */

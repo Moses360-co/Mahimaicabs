@@ -1,0 +1,235 @@
+/* =========================
+   VARIABLES (YOUR COLORS)
+========================= */
+$bg-main: #ffffff;
+$bg-soft: #f7f9fc;
+$primary: #1f3b4d;
+$gold: #d4b35f;
+$text-dark: #2e2e2e;
+$text-muted: #6b7280;
+$shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+$radius: 18px;
+$transition: 0.35s ease;
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   HOME
+========================= */
+.home {
+  background: $bg-main;
+  padding: 20px;
+  animation: fadeUp 0.8s ease;
+}
+
+/* =========================
+   TITLES
+========================= */
+.home-title {
+  text-align: center;
+  font-size: 38px;
+  color: $primary;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  color: $primary;
+  margin: 50px 0 30px;
+}
+
+/* =========================
+   COMPANY BANNER
+========================= */
+.company-banner {
+  position: relative;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $shadow;
+  margin: 0 auto 50px;
+  max-width: 1200px;
+
+  img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    animation: zoomIn 1.2s ease;
+  }
+}
+
+.company-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(31, 59, 77, 0.9),
+    rgba(31, 59, 77, 0.3)
+  );
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: fadeUp 0.8s ease;
+
+  h2 {
+    font-size: 32px;
+    color: $gold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #f1f5f9;
+  }
+}
+
+/* =========================
+   PACKAGE LIST
+========================= */
+.package-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   PACKAGE CARD
+========================= */
+.package-card {
+  background: $bg-soft;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  transition: $transition;
+  animation: fadeUp 0.9s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    color: $primary;
+    font-size: 20px;
+    margin: 15px;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 14px;
+    margin: 0 15px 15px;
+    line-height: 1.6;
+  }
+
+  button {
+    margin: 0 15px 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, $primary, darken($primary, 8%));
+    color: #fff;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background: linear-gradient(135deg, $gold, darken($gold, 10%));
+      color: $primary;
+    }
+  }
+}
+
+/* =========================
+   SCROLL TOP BUTTON
+========================= */
+.scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: $gold;
+  color: $primary;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: $shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: darken($gold, 10%);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .company-banner img {
+    height: 260px;
+  }
+
+  .company-overlay {
+    padding: 20px;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .company-banner img {
+    height: 220px;
+  }
+
+  .package-card img {
+    height: 180px;
+  }
+}

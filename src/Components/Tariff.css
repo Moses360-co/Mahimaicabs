@@ -1,0 +1,120 @@
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tariff-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  padding: 24px;
+  background: #e0e0e0;
+}
+
+.tariff-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(15, 32, 39, 0.25);
+  animation: slideFade 0.6s ease both;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.tariff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 42px rgba(15, 32, 39, 0.35);
+}
+
+.vehicle-image {
+  text-align: center;
+  margin-bottom: 14px;
+}
+.vehicle-image img {
+  width: 100%;
+  max-width: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.vehicle-image h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f2027;
+}
+
+.tariff-section {
+  border: 2px solid #d4b35f;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.tariff-section h3 {
+  background: rgba(212, 179, 95, 0.22);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f2027;
+  letter-spacing: 0.4px;
+}
+
+.tariff-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #203a43;
+  border-top: 1px solid rgba(32, 58, 67, 0.15);
+  transition: background 0.35s ease, transform 0.35s ease;
+}
+.tariff-item svg {
+  font-size: 16px;
+  color: #d4b35f;
+}
+.tariff-item:hover {
+  background: rgba(212, 179, 95, 0.12);
+  transform: translateX(5px);
+}
+
+.book-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #0f2027;
+  background: linear-gradient(135deg, rgb(218.481773399, 190.4561576355, 119.118226601), rgb(205.518226601, 167.5438423645, 70.881773399));
+  transition: all 0.35s ease;
+  text-align: center;
+}
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 32, 39, 0.35);
+}
+.book-btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 480px) {
+  .tariff-page {
+    padding: 14px;
+    gap: 16px;
+  }
+  .tariff-card {
+    padding: 16px;
+  }
+  .tariff-item {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+  .vehicle-image img {
+    max-width: 190px;
+  }
+}/*# sourceMappingURL=Tariff.css.map */

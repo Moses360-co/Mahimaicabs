@@ -1,0 +1,194 @@
+/* =========================
+   VARIABLES
+========================= */
+/* =========================
+   PAGE WRAPPER
+========================= */
+.final-package {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7f9fc, #ffffff);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease;
+}
+.final-package h2 {
+  font-size: 32px;
+  color: #1f3b4d;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: #1f3b4d;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: 0.35s ease;
+}
+.back-btn:hover {
+  color: #d4b35f;
+  transform: translateX(-4px);
+}
+
+/* =========================
+   CARD
+========================= */
+.package-card {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  animation: slideUp 0.7s ease;
+}
+.package-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  transition: 0.35s ease;
+}
+.package-card img:hover {
+  transform: scale(1.05);
+}
+.package-card h3 {
+  color: #1f3b4d;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+.package-card p {
+  color: #6b7280;
+  font-size: 15px;
+  margin: 5px 0;
+}
+.package-card hr {
+  margin: 18px 0;
+  border: none;
+  height: 1px;
+  background: #eee;
+}
+.package-card .price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d4b35f;
+  margin: 15px 0;
+}
+.package-card h4 {
+  margin-top: 14px;
+  color: #1f3b4d;
+  font-size: 16px;
+}
+
+/* =========================
+   WHATSAPP BOOKING BUTTON
+========================= */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #1f3b4d, rgb(19.2888888889, 36.7111111111, 47.9111111111));
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.35s ease;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #d4b35f, rgb(201.197044335, 159.9064039409, 54.802955665));
+  color: #1f3b4d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   HOME BUTTON
+========================= */
+.home-btn {
+  background: transparent;
+  border: none;
+  color: #1f3b4d;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: 0.35s ease;
+}
+.home-btn:hover {
+  color: #d4b35f;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .final-package {
+    padding: 60px 15px;
+  }
+  .final-package h2 {
+    font-size: 26px;
+  }
+  .package-card {
+    padding: 22px;
+  }
+  .package-card h3 {
+    font-size: 20px;
+  }
+  .package-card .price {
+    font-size: 24px;
+  }
+  .whatsapp-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .package-card {
+    padding: 18px;
+  }
+  .back-btn {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=FinalPackage.css.map */

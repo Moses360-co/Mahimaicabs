@@ -1,0 +1,140 @@
+/* =====================
+   VARIABLES
+===================== */
+$bg-main: #ffffff;
+$bg-soft: #f7f9fc;
+$primary: #1f3b4d;
+$gold: #d4b35f;
+$text-dark: #2e2e2e;
+$text-muted: #6b7280;
+$shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+$radius: 18px;
+$transition: 0.35s ease;
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   PAGE LAYOUT
+===================== */
+.select-days {
+  background: $bg-main;
+  min-height: 100vh;
+  padding: 28px;
+  animation: fadeUp 0.6s ease;
+}
+
+/* =====================
+   BACK BUTTON
+===================== */
+.select-days button:first-child {
+  background: transparent;
+  border: none;
+  color: $primary;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 22px;
+  transition: $transition;
+
+  &:hover {
+    color: $gold;
+    transform: translateX(-5px);
+  }
+}
+
+/* =====================
+   VEHICLE TITLE
+===================== */
+.select-days h2 {
+  font-size: 32px;
+  color: $primary;
+  margin-bottom: 26px;
+  animation: fadeUp 0.7s ease;
+}
+
+/* =====================
+   DAY PACKAGE CARD
+===================== */
+.select-days > div {
+  background: $bg-soft;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 20px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  h3 {
+    font-size: 20px;
+    color: $text-dark;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 15px;
+    color: $text-muted;
+    margin-bottom: 6px;
+
+    &:last-of-type {
+      font-weight: 600;
+      color: $primary;
+      margin-top: 10px;
+    }
+  }
+}
+
+/* =====================
+   SELECT BUTTON
+===================== */
+.select-days > div button {
+  margin-top: 14px;
+  background: linear-gradient(135deg, $primary, darken($primary, 10%));
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background: linear-gradient(135deg, $gold, darken($gold, 8%));
+    color: $primary;
+    transform: translateY(-4px);
+  }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .select-days h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .select-days {
+    padding: 16px;
+  }
+
+  .select-days > div button {
+    width: 100%;
+    text-align: center;
+  }
+}
