@@ -1,48 +1,112 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdHome,MdAttachMoney,MdMiscellaneousServices,MdCall } from "react-icons/md";
+
+import {
+  MdHome,
+  MdAttachMoney,
+  MdMiscellaneousServices,
+  MdCall
+} from "react-icons/md";
+
+import { FaBars, FaTimes } from "react-icons/fa";
+
 import "./Navbar.css";
 import LogoImage from "./logo.png";
-import { FaBars, FaTimes} from "react-icons/fa";
 
 const Navbar = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
+
     <nav className="navbar">
+
       {/* LOGO */}
       <div className="logo-container">
-        <Link to="/" className="logo-link">
-          <img src={LogoImage} alt="Logo" className="logo" />
-          <h1>Mahimai Cabs & Tours</h1>
+
+        <Link to="/" className="logo-link" onClick={closeMenu}>
+
+          <img
+            src={LogoImage}
+            alt="Mahimai Cabs"
+            className="logo"
+          />
+
+          <span className="logo-text">
+            Mahimai Cabs & Tours
+          </span>
+
         </Link>
+
       </div>
 
-      {/* MENU */}
+
+
+      {/* NAV LINKS */}
       <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+
         <li>
-          <Link to="/" onClick={() => setMenuOpen(false)}><MdHome /> Home</Link>
+          <Link to="/" onClick={closeMenu}>
+            <MdHome /> Home
+          </Link>
         </li>
+
         <li>
-          <Link to="/tariff" onClick={() => setMenuOpen(false)}><MdAttachMoney /> Tariff</Link>
+          <Link to="/tariff" onClick={closeMenu}>
+            <MdAttachMoney /> Tariff
+          </Link>
         </li>
+
         <li>
-          <Link to="/services" onClick={() => setMenuOpen(false)}><MdMiscellaneousServices /> Services</Link>
+          <Link to="/services" onClick={closeMenu}>
+            <MdMiscellaneousServices /> Services
+          </Link>
         </li>
+
         <li>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}><MdCall /> Contact</Link>
+          <Link to="/contact" onClick={closeMenu}>
+            <MdCall /> Contact
+          </Link>
         </li>
+
       </ul>
 
-      {/* MENU ICON */}
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+
+
+      {/* MOBILE MENU ICON */}
+      <div
+        className={`menu-icon ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
+
         {menuOpen ? <FaTimes /> : <FaBars />}
+
       </div>
 
+
+
       {/* OVERLAY */}
-      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
+      {menuOpen && (
+
+        <div
+          className="overlay"
+          onClick={closeMenu}
+        />
+
+      )}
+
     </nav>
+
   );
+
 };
 
 export default Navbar;
