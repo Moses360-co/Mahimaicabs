@@ -19,20 +19,16 @@ $transition: 0.35s ease;
   z-index: 2000;
 
   width: 100%;
-  padding: 12px 24px;
+  padding: 12px 22px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   background: $nav-bg;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 
-  animation: fadeDown 0.5s ease both;
-
-  /* ==========================
-     LOGO
-  ========================== */
+  /* LOGO */
 
   .logo-container {
     display: flex;
@@ -46,92 +42,54 @@ $transition: 0.35s ease;
     }
 
     .logo {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 3px solid $accent;
-      padding: 3px;
-      transition: transform $transition;
+      border: 2px solid $accent;
+      padding: 2px;
     }
 
     h1 {
       font-size: 18px;
       color: $text-white;
       font-weight: 600;
-      white-space: nowrap;
-    }
-
-    &:hover .logo {
-      transform: scale(1.08);
     }
   }
 
-  /* ==========================
-     DESKTOP MENU
-  ========================== */
+  /* DESKTOP MENU */
 
   .nav-menu {
     display: flex;
-    align-items: center;
     gap: 26px;
     list-style: none;
 
-    li {
-      position: relative;
+    li a {
+      color: $text-soft;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
 
-      a {
-        color: $text-soft;
-        font-size: 16px;
-        text-decoration: none;
-        transition: color $transition;
-      }
-
-      &:hover a {
-        color: $accent;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        width: 0;
-        height: 2px;
-        background: $accent;
-        transition: width $transition;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
+    li a:hover {
+      color: $accent;
     }
   }
 
-  /* ==========================
-     MOBILE MENU ICON
-  ========================== */
+  /* MENU ICON */
 
   .menu-icon {
     display: none;
     font-size: 26px;
-    color: $text-white;
+    color: white;
     cursor: pointer;
   }
 }
 
 /* ==========================
-   MOBILE RESPONSIVE
+   MOBILE VIEW
 ========================== */
 
 @media (max-width: 768px) {
-
-  .navbar {
-    padding: 12px 16px;
-  }
-
-  .logo-container h1 {
-    font-size: 16px;
-  }
 
   .menu-icon {
     display: block;
@@ -142,9 +100,9 @@ $transition: 0.35s ease;
     top: 0;
     right: -100%;
 
-    width: 75%;
-    max-width: 260px;
     height: 100vh;
+    width: 75%;
+    max-width: 280px;
 
     background: $nav-bg-mobile;
 
@@ -153,67 +111,52 @@ $transition: 0.35s ease;
     justify-content: center;
     align-items: flex-start;
 
-    padding-left: 30px;
-    gap: 28px;
+    padding: 40px 30px;
 
-    transition: right $transition;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+    gap: 30px;
 
-    &.active {
-      right: 0;
+    transition: right 0.35s ease;
+  }
 
-      li {
-        animation: slideFade 0.4s ease forwards;
-      }
-    }
+  .nav-menu.active {
+    right: 0;
+  }
 
-    li {
-      opacity: 0;
+  .nav-menu li {
+    width: 100%;
+  }
 
-      a {
-        font-size: 18px;
-        color: $text-white;
-      }
-    }
+  .nav-menu li a {
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    color: white;
+  }
+
+  /* overlay */
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
   }
 
 }
 
 /* ==========================
-   OVERLAY
+   SMALL MOBILE
 ========================== */
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 1500;
-}
+@media (max-width: 480px) {
 
-/* ==========================
-   ANIMATIONS
-========================== */
-
-@keyframes slideFade {
-  from {
-    opacity: 0;
-    transform: translateX(25px);
+  .logo-container h1 {
+    font-size: 15px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-14px);
+  .logo-container .logo {
+    width: 38px;
+    height: 38px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
