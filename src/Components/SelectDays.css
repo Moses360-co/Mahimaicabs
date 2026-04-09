@@ -2,7 +2,7 @@
    VARIABLES
 ===================== */
 /* =====================
-   ANIMATIONS
+   ANIMATION
 ===================== */
 @keyframes fadeUp {
   from {
@@ -21,13 +21,15 @@
   background: #ffffff;
   min-height: 100vh;
   padding: 28px;
+  max-width: 900px;
+  margin: auto;
   animation: fadeUp 0.6s ease;
 }
 
 /* =====================
    BACK BUTTON
 ===================== */
-.select-days button:first-child {
+.select-days .back-btn {
   background: transparent;
   border: none;
   color: #1f3b4d;
@@ -36,47 +38,45 @@
   margin-bottom: 22px;
   transition: 0.35s ease;
 }
-.select-days button:first-child:hover {
+.select-days .back-btn:hover {
   color: #d4b35f;
-  transform: translateX(-5px);
+  transform: translateX(-4px);
 }
 
 /* =====================
-   VEHICLE TITLE
+   TITLE
 ===================== */
 .select-days h2 {
-  font-size: 32px;
+  font-size: 30px;
   color: #1f3b4d;
   margin-bottom: 26px;
-  animation: fadeUp 0.7s ease;
 }
 
 /* =====================
-   DAY PACKAGE CARD
+   PACKAGE CARD
 ===================== */
-.select-days > div {
+.day-card {
   background: #f7f9fc;
   border-radius: 18px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 24px;
-  animation: fadeUp 0.8s ease;
   transition: 0.35s ease;
 }
-.select-days > div:hover {
-  transform: translateY(-6px);
+.day-card:hover {
+  transform: translateY(-5px);
 }
-.select-days > div h3 {
+.day-card h3 {
   font-size: 20px;
   color: #2e2e2e;
   margin-bottom: 10px;
 }
-.select-days > div p {
+.day-card p {
   font-size: 15px;
   color: #6b7280;
   margin-bottom: 6px;
 }
-.select-days > div p:last-of-type {
+.day-card .price {
   font-weight: 600;
   color: #1f3b4d;
   margin-top: 10px;
@@ -85,37 +85,48 @@
 /* =====================
    SELECT BUTTON
 ===================== */
-.select-days > div button {
+.select-btn {
   margin-top: 14px;
   background: linear-gradient(135deg, #1f3b4d, rgb(16.3611111111, 31.1388888889, 40.6388888889));
   color: #fff;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 28px;
   border-radius: 30px;
   font-size: 15px;
   cursor: pointer;
   transition: 0.35s ease;
 }
-.select-days > div button:hover {
+.select-btn:hover {
   background: linear-gradient(135deg, #d4b35f, rgb(203.357635468, 163.7251231527, 62.842364532));
   color: #1f3b4d;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 /* =====================
-   RESPONSIVE
+   TABLET
 ===================== */
 @media (max-width: 768px) {
+  .select-days {
+    padding: 22px;
+  }
   .select-days h2 {
     font-size: 26px;
   }
 }
+/* =====================
+   MOBILE
+===================== */
 @media (max-width: 480px) {
   .select-days {
     padding: 16px;
   }
-  .select-days > div button {
+  .select-days h2 {
+    font-size: 22px;
+  }
+  .day-card {
+    padding: 18px;
+  }
+  .select-btn {
     width: 100%;
-    text-align: center;
   }
 }/*# sourceMappingURL=SelectDays.css.map */

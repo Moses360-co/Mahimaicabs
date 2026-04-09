@@ -1,35 +1,39 @@
-// ===========================
-// VARIABLES
-// ===========================
-$nav-bg: #0b3c5d;        // Ocean blue
+/* ==========================
+   VARIABLES
+========================== */
+
+$nav-bg: #0b3c5d;
 $nav-bg-mobile: #102a43;
-$accent: #ffd166;       // Sun gold
+$accent: #ffd166;
 $text-white: #ffffff;
 $text-soft: rgba(255, 255, 255, 0.85);
 $transition: 0.35s ease;
 
-// ===========================
-// NAVBAR
-// ===========================
+/* ==========================
+   NAVBAR
+========================== */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 2000;
 
   width: 100%;
-  padding: 14px 28px;
+  padding: 12px 24px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   background: $nav-bg;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+
   animation: fadeDown 0.5s ease both;
 
-  // ===========================
-  // LOGO
-  // ===========================
+  /* ==========================
+     LOGO
+  ========================== */
+
   .logo-container {
     display: flex;
     align-items: center;
@@ -37,23 +41,23 @@ $transition: 0.35s ease;
     a {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
     }
 
     .logo {
-      width: 52px;
-      height: 52px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       border: 3px solid $accent;
-      padding: 4px;
+      padding: 3px;
       transition: transform $transition;
     }
 
     h1 {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 18px;
       color: $text-white;
+      font-weight: 600;
       white-space: nowrap;
     }
 
@@ -62,16 +66,15 @@ $transition: 0.35s ease;
     }
   }
 
-  // ===========================
-  // MENU (DESKTOP)
-  // ===========================
+  /* ==========================
+     DESKTOP MENU
+  ========================== */
+
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 26px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 
     li {
       position: relative;
@@ -79,7 +82,6 @@ $transition: 0.35s ease;
       a {
         color: $text-soft;
         font-size: 16px;
-        font-weight: 500;
         text-decoration: none;
         transition: color $transition;
       }
@@ -105,84 +107,99 @@ $transition: 0.35s ease;
     }
   }
 
-  // ===========================
-  // MENU ICON (MOBILE)
-  // ===========================
+  /* ==========================
+     MOBILE MENU ICON
+  ========================== */
+
   .menu-icon {
     display: none;
     font-size: 26px;
     color: $text-white;
     cursor: pointer;
   }
+}
 
-  // ===========================
-  // MOBILE RESPONSIVE
-  // ===========================
-  @media (max-width: 768px) {
-    padding: 12px 18px;
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
 
-    .menu-icon {
-      display: block;
-    }
+@media (max-width: 768px) {
 
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      height: 100vh;
-      width: 260px;
+  .navbar {
+    padding: 12px 16px;
+  }
 
-      background: $nav-bg-mobile;
+  .logo-container h1 {
+    font-size: 16px;
+  }
 
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
+  .menu-icon {
+    display: block;
+  }
 
-      gap: 26px;
-      padding-left: 30px;
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
 
-      transition: right $transition;
-      box-shadow: -12px 0 30px rgba(0, 0, 0, 0.45);
+    width: 75%;
+    max-width: 260px;
+    height: 100vh;
 
-      &.active {
-        right: 0;
+    background: $nav-bg-mobile;
 
-        li {
-          animation: slideFade 0.4s ease forwards;
-        }
-      }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-left: 30px;
+    gap: 28px;
+
+    transition: right $transition;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+
+    &.active {
+      right: 0;
 
       li {
-        opacity: 0;
+        animation: slideFade 0.4s ease forwards;
+      }
+    }
 
-        a {
-          font-size: 18px;
-          color: $text-white;
-        }
+    li {
+      opacity: 0;
+
+      a {
+        font-size: 18px;
+        color: $text-white;
       }
     }
   }
+
 }
 
-// ===========================
-// OVERLAY
-// ===========================
+/* ==========================
+   OVERLAY
+========================== */
+
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   z-index: 1500;
 }
 
-// ===========================
-// ANIMATIONS
-// ===========================
+/* ==========================
+   ANIMATIONS
+========================== */
+
 @keyframes slideFade {
   from {
     opacity: 0;
     transform: translateX(25px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -194,6 +211,7 @@ $transition: 0.35s ease;
     opacity: 0;
     transform: translateY(-14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

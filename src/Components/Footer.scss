@@ -1,6 +1,6 @@
-/* ============================= */
-/* FADE UP ANIMATION */
-/* ============================= */
+/* =============================
+   ANIMATION
+============================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -12,51 +12,62 @@
   }
 }
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+/* =============================
+   FOOTER
+============================= */
+
 .footer {
-  background: #0b3c5d; // Deep ocean blue (solid)
+  width: 100%;
+  background: #0b3c5d;
   color: #ffffff;
-  padding: 55px 20px 22px;
+  padding: 50px 20px 20px;
   font-family: "Poppins", Arial, sans-serif;
 
+  /* =============================
+     CONTAINER
+  ============================= */
+
   .footer-container {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    gap: 32px;
+    align-items: flex-start;
+    gap: 30px;
     flex-wrap: wrap;
   }
 
-  /* ============================= */
-  /* FOOTER SECTION */
-  /* ============================= */
+  /* =============================
+     FOOTER SECTION
+  ============================= */
+
   .footer-section {
-    flex: 1;
-    min-width: 220px;
+    flex: 1 1 250px;
     animation: fadeUp 0.8s ease forwards;
 
     h3 {
       margin-bottom: 14px;
       font-size: 18px;
       font-weight: 600;
-      color: #ffd166; // Sun accent
+      color: #ffd166;
     }
 
     p {
       margin: 6px 0;
       color: #e6f1f7;
-      line-height: 1.7;
+      line-height: 1.6;
       font-size: 15px;
     }
   }
 
-  /* ============================= */
-  /* SOCIAL ICONS */
-/* ============================= */
+  /* =============================
+     SOCIAL ICONS
+  ============================= */
+
   .social-icons {
     display: flex;
     gap: 18px;
+    flex-wrap: wrap;
 
     a {
       color: #e6f1f7;
@@ -71,12 +82,13 @@
     }
   }
 
-  /* ============================= */
-  /* FOOTER BOTTOM */
-/* ============================= */
+  /* =============================
+     FOOTER BOTTOM
+  ============================= */
+
   .footer-bottom {
-    margin-top: 34px;
-    padding-top: 16px;
+    margin-top: 35px;
+    padding-top: 15px;
     text-align: center;
     font-size: 14px;
     color: #d5e3eb;
@@ -84,20 +96,51 @@
   }
 }
 
-/* ============================= */
-/* MOBILE */
-/* ============================= */
-@media (max-width: 768px) {
-  .footer {
-    padding: 45px 18px 20px;
+/* =============================
+   TABLET
+============================= */
 
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
+@media (max-width: 900px) {
 
-    .social-icons {
-      justify-content: center;
-    }
+  .footer-container {
+    justify-content: center;
+    text-align: center;
   }
+
+  .footer-section {
+    flex: 1 1 300px;
+  }
+
+}
+
+/* =============================
+   MOBILE
+============================= */
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding: 40px 15px 18px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-section {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+  }
+
 }

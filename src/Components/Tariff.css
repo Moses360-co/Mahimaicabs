@@ -10,10 +10,13 @@
 }
 .tariff-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
-  padding: 24px;
+  /* mobile first */
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 18px;
   background: #e0e0e0;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .tariff-card {
@@ -23,9 +26,12 @@
   box-shadow: 0 14px 34px rgba(15, 32, 39, 0.25);
   animation: slideFade 0.6s ease both;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
 }
+
 .tariff-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 20px 42px rgba(15, 32, 39, 0.35);
 }
 
@@ -33,12 +39,14 @@
   text-align: center;
   margin-bottom: 14px;
 }
+
 .vehicle-image img {
   width: 100%;
   max-width: 220px;
   -o-object-fit: contain;
      object-fit: contain;
 }
+
 .vehicle-image h2 {
   margin-top: 10px;
   font-size: 18px;
@@ -52,32 +60,34 @@
   margin-bottom: 16px;
   overflow: hidden;
 }
+
 .tariff-section h3 {
   background: rgba(212, 179, 95, 0.22);
   padding: 10px 14px;
   font-size: 14px;
   font-weight: 700;
   color: #0f2027;
-  letter-spacing: 0.4px;
 }
 
 .tariff-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 11px 14px;
   font-size: 14px;
   color: #203a43;
   border-top: 1px solid rgba(32, 58, 67, 0.15);
   transition: background 0.35s ease, transform 0.35s ease;
 }
+
 .tariff-item svg {
   font-size: 16px;
   color: #d4b35f;
 }
+
 .tariff-item:hover {
   background: rgba(212, 179, 95, 0.12);
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .book-btn {
@@ -92,29 +102,20 @@
   color: #0f2027;
   background: linear-gradient(135deg, rgb(218.481773399, 190.4561576355, 119.118226601), rgb(205.518226601, 167.5438423645, 70.881773399));
   transition: all 0.35s ease;
-  text-align: center;
 }
+
 .book-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(15, 32, 39, 0.35);
 }
-.book-btn:active {
-  transform: scale(0.96);
-}
 
-@media (max-width: 480px) {
+@media (min-width: 600px) {
   .tariff-page {
-    padding: 14px;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .tariff-card {
-    padding: 16px;
-  }
-  .tariff-item {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-  .vehicle-image img {
-    max-width: 190px;
+}
+@media (min-width: 1024px) {
+  .tariff-page {
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=Tariff.css.map */

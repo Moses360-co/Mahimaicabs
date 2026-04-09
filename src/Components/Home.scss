@@ -1,19 +1,21 @@
 /* =========================
-   VARIABLES (YOUR COLORS)
+   VARIABLES
 ========================= */
+
 $bg-main: #ffffff;
 $bg-soft: #f7f9fc;
 $primary: #1f3b4d;
 $gold: #d4b35f;
 $text-dark: #2e2e2e;
 $text-muted: #6b7280;
-$shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+$shadow: 0 12px 28px rgba(0,0,0,0.1);
 $radius: 18px;
 $transition: 0.35s ease;
 
 /* =========================
    ANIMATIONS
 ========================= */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -27,7 +29,7 @@ $transition: 0.35s ease;
 
 @keyframes zoomIn {
   from {
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
   to {
     transform: scale(1);
@@ -37,6 +39,7 @@ $transition: 0.35s ease;
 /* =========================
    HOME
 ========================= */
+
 .home {
   background: $bg-main;
   padding: 20px;
@@ -46,12 +49,12 @@ $transition: 0.35s ease;
 /* =========================
    TITLES
 ========================= */
+
 .home-title {
   text-align: center;
   font-size: 38px;
   color: $primary;
   margin-bottom: 30px;
-  animation: fadeUp 0.6s ease;
 }
 
 .section-title {
@@ -64,6 +67,7 @@ $transition: 0.35s ease;
 /* =========================
    COMPANY BANNER
 ========================= */
+
 .company-banner {
   position: relative;
   border-radius: $radius;
@@ -71,10 +75,13 @@ $transition: 0.35s ease;
   box-shadow: $shadow;
   margin: 0 auto 50px;
   max-width: 1200px;
+  width: 100%;
 
   img {
     width: 100%;
-    height: 380px;
+    height: auto;
+    min-height: 260px;
+    max-height: 380px;
     object-fit: cover;
     animation: zoomIn 1.2s ease;
   }
@@ -85,15 +92,14 @@ $transition: 0.35s ease;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(31, 59, 77, 0.9),
-    rgba(31, 59, 77, 0.3)
+    rgba(31,59,77,0.9),
+    rgba(31,59,77,0.3)
   );
   color: #fff;
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  animation: fadeUp 0.8s ease;
 
   h2 {
     font-size: 32px;
@@ -104,35 +110,36 @@ $transition: 0.35s ease;
   p {
     max-width: 620px;
     font-size: 16px;
-    line-height: 1.7;
-    color: #f1f5f9;
+    line-height: 1.6;
   }
 }
 
 /* =========================
    PACKAGE LIST
 ========================= */
+
 .package-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
   max-width: 1200px;
   margin: auto;
+  width: 100%;
 }
 
 /* =========================
    PACKAGE CARD
 ========================= */
+
 .package-card {
   background: $bg-soft;
   border-radius: $radius;
   box-shadow: $shadow;
   overflow: hidden;
   transition: $transition;
-  animation: fadeUp 0.9s ease;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
 
   img {
@@ -172,14 +179,15 @@ $transition: 0.35s ease;
 }
 
 /* =========================
-   SCROLL TOP BUTTON
+   SCROLL BUTTON
 ========================= */
+
 .scroll-top {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 48px;
-  height: 48px;
+  bottom: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: none;
   background: $gold;
@@ -196,9 +204,15 @@ $transition: 0.35s ease;
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
+
 @media (max-width: 768px) {
+
+  .home {
+    padding: 15px;
+  }
+
   .home-title {
     font-size: 28px;
   }
@@ -207,29 +221,48 @@ $transition: 0.35s ease;
     font-size: 22px;
   }
 
-  .company-banner img {
-    height: 260px;
-  }
-
   .company-overlay {
     padding: 20px;
 
     h2 {
-      font-size: 22px;
+      font-size: 24px;
     }
 
     p {
       font-size: 14px;
     }
   }
-}
-
-@media (max-width: 480px) {
-  .company-banner img {
-    height: 220px;
-  }
 
   .package-card img {
     height: 180px;
   }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .home-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .company-banner img {
+    min-height: 200px;
+  }
+
+  .package-card img {
+    height: 160px;
+  }
+
+  .package-list {
+    gap: 18px;
+  }
+
 }

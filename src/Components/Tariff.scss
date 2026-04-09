@@ -1,5 +1,5 @@
 // ===========================
-// MAIN COLOR PALETTE
+// COLORS
 // ===========================
 $primary-dark: #0f2027;
 $secondary-dark: #203a43;
@@ -8,8 +8,9 @@ $text-light: #e0e0e0;
 $white: #ffffff;
 $transition: 0.35s ease;
 
+
 // ===========================
-// ANIMATIONS
+// ANIMATION
 // ===========================
 @keyframes slideFade {
   from {
@@ -22,16 +23,23 @@ $transition: 0.35s ease;
   }
 }
 
+
 // ===========================
 // PAGE LAYOUT
 // ===========================
 .tariff-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
-  padding: 24px;
+
+  /* mobile first */
+  grid-template-columns: 1fr;
+
+  gap: 18px;
+  padding: 18px;
   background: $text-light;
+  max-width: 1200px;
+  margin: auto;
 }
+
 
 // ===========================
 // CARD
@@ -40,36 +48,41 @@ $transition: 0.35s ease;
   background: $white;
   border-radius: 18px;
   padding: 18px;
-  box-shadow: 0 14px 34px rgba(15, 32, 39, 0.25);
+  box-shadow: 0 14px 34px rgba(15,32,39,0.25);
   animation: slideFade 0.6s ease both;
   transition: transform $transition, box-shadow $transition;
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 42px rgba(15, 32, 39, 0.35);
-  }
+  display: flex;
+  flex-direction: column;
 }
 
+.tariff-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(15,32,39,0.35);
+}
+
+
 // ===========================
-// VEHICLE IMAGE & TITLE
+// VEHICLE IMAGE
 // ===========================
 .vehicle-image {
   text-align: center;
   margin-bottom: 14px;
-
-  img {
-    width: 100%;
-    max-width: 220px;
-    object-fit: contain;
-  }
-
-  h2 {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    color: $primary-dark;
-  }
 }
+
+.vehicle-image img {
+  width: 100%;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.vehicle-image h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: $primary-dark;
+}
+
 
 // ===========================
 // SECTION
@@ -79,16 +92,16 @@ $transition: 0.35s ease;
   border-radius: 14px;
   margin-bottom: 16px;
   overflow: hidden;
-
-  h3 {
-    background: rgba(212, 179, 95, 0.22);
-    padding: 10px 14px;
-    font-size: 14px;
-    font-weight: 700;
-    color: $primary-dark;
-    letter-spacing: 0.4px;
-  }
 }
+
+.tariff-section h3 {
+  background: rgba(212,179,95,0.22);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: $primary-dark;
+}
+
 
 // ===========================
 // ITEM
@@ -96,23 +109,24 @@ $transition: 0.35s ease;
 .tariff-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 11px 14px;
   font-size: 14px;
   color: $secondary-dark;
-  border-top: 1px solid rgba(32, 58, 67, 0.15);
+  border-top: 1px solid rgba(32,58,67,0.15);
   transition: background $transition, transform $transition;
-
-  svg {
-    font-size: 16px;
-    color: $gold;
-  }
-
-  &:hover {
-    background: rgba(212, 179, 95, 0.12);
-    transform: translateX(5px);
-  }
 }
+
+.tariff-item svg {
+  font-size: 16px;
+  color: $gold;
+}
+
+.tariff-item:hover {
+  background: rgba(212,179,95,0.12);
+  transform: translateX(4px);
+}
+
 
 // ===========================
 // BUTTON
@@ -126,44 +140,42 @@ $transition: 0.35s ease;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+
   color: $primary-dark;
   background: linear-gradient(
     135deg,
-    lighten($gold, 6%),
-    darken($gold, 6%)
+    lighten($gold,6%),
+    darken($gold,6%)
   );
+
   transition: all $transition;
-  text-align: center;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(15, 32, 39, 0.35);
-  }
-
-  &:active {
-    transform: scale(0.96);
-  }
 }
 
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15,32,39,0.35);
+}
+
+
 // ===========================
-// MOBILE RESPONSIVE
+// TABLET
 // ===========================
-@media (max-width: 480px) {
+@media (min-width: 600px) {
+
   .tariff-page {
-    padding: 14px;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .tariff-card {
-    padding: 16px;
+}
+
+
+// ===========================
+// DESKTOP
+// ===========================
+@media (min-width: 1024px) {
+
+  .tariff-page {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .tariff-item {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-
-  .vehicle-image img {
-    max-width: 190px;
-  }
 }

@@ -1,5 +1,5 @@
 /* =========================
-   VARIABLES (YOUR COLORS)
+   VARIABLES
 ========================= */
 /* =========================
    ANIMATIONS
@@ -16,7 +16,7 @@
 }
 @keyframes zoomIn {
   from {
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
   to {
     transform: scale(1);
@@ -39,7 +39,6 @@
   font-size: 38px;
   color: #1f3b4d;
   margin-bottom: 30px;
-  animation: fadeUp 0.6s ease;
 }
 
 .section-title {
@@ -59,10 +58,13 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
   margin: 0 auto 50px;
   max-width: 1200px;
+  width: 100%;
 }
 .company-banner img {
   width: 100%;
-  height: 380px;
+  height: auto;
+  min-height: 260px;
+  max-height: 380px;
   -o-object-fit: cover;
      object-fit: cover;
   animation: zoomIn 1.2s ease;
@@ -77,7 +79,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  animation: fadeUp 0.8s ease;
 }
 .company-overlay h2 {
   font-size: 32px;
@@ -87,8 +88,7 @@
 .company-overlay p {
   max-width: 620px;
   font-size: 16px;
-  line-height: 1.7;
-  color: #f1f5f9;
+  line-height: 1.6;
 }
 
 /* =========================
@@ -96,10 +96,11 @@
 ========================= */
 .package-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
   max-width: 1200px;
   margin: auto;
+  width: 100%;
 }
 
 /* =========================
@@ -111,10 +112,9 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: 0.35s ease;
-  animation: fadeUp 0.9s ease;
 }
 .package-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 .package-card img {
   width: 100%;
@@ -149,14 +149,14 @@
 }
 
 /* =========================
-   SCROLL TOP BUTTON
+   SCROLL BUTTON
 ========================= */
 .scroll-top {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 48px;
-  height: 48px;
+  bottom: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: none;
   background: #d4b35f;
@@ -172,33 +172,48 @@
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 @media (max-width: 768px) {
+  .home {
+    padding: 15px;
+  }
   .home-title {
     font-size: 28px;
   }
   .section-title {
     font-size: 22px;
   }
-  .company-banner img {
-    height: 260px;
-  }
   .company-overlay {
     padding: 20px;
   }
   .company-overlay h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
   .company-overlay p {
     font-size: 14px;
   }
-}
-@media (max-width: 480px) {
-  .company-banner img {
-    height: 220px;
-  }
   .package-card img {
     height: 180px;
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 24px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .company-banner img {
+    min-height: 200px;
+  }
+  .package-card img {
+    height: 160px;
+  }
+  .package-list {
+    gap: 18px;
   }
 }/*# sourceMappingURL=Home.css.map */

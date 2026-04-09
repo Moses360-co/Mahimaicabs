@@ -18,8 +18,9 @@ $transition: 0.35s ease;
 
 .final-package {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(135deg, $bg-soft, $bg-main);
-  padding: 80px 20px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +31,7 @@ $transition: 0.35s ease;
     color: $primary;
     margin-bottom: 30px;
     font-weight: 700;
+    text-align: center;
   }
 }
 
@@ -38,13 +40,15 @@ $transition: 0.35s ease;
 ========================= */
 
 .back-btn {
-  align-self: flex-start;
+  width: 100%;
+  max-width: 450px;
   background: transparent;
   border: none;
   color: $primary;
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 16px;
+  text-align: left;
   transition: $transition;
 
   &:hover {
@@ -63,19 +67,20 @@ $transition: 0.35s ease;
   background: $bg-main;
   border-radius: $radius;
   box-shadow: $shadow;
-  padding: 30px;
+  padding: 28px;
   text-align: center;
   animation: slideUp 0.7s ease;
 
   img {
     width: 100%;
+    height: auto;
     border-radius: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     transition: $transition;
+  }
 
-    &:hover {
-      transform: scale(1.05);
-    }
+  img:hover {
+    transform: scale(1.04);
   }
 
   h3 {
@@ -87,7 +92,8 @@ $transition: 0.35s ease;
   p {
     color: $text-muted;
     font-size: 15px;
-    margin: 5px 0;
+    margin: 6px 0;
+    line-height: 1.5;
   }
 
   hr {
@@ -101,25 +107,25 @@ $transition: 0.35s ease;
     font-size: 28px;
     font-weight: bold;
     color: $gold;
-    margin: 15px 0;
+    margin: 14px 0;
   }
 
   h4 {
-    margin-top: 14px;
+    margin-top: 12px;
     color: $primary;
     font-size: 16px;
   }
 }
 
 /* =========================
-   WHATSAPP BOOKING BUTTON
+   WHATSAPP BUTTON
 ========================= */
 
 .whatsapp-btn {
   background: linear-gradient(135deg, $primary, darken($primary, 8%));
   color: #fff;
   border: none;
-  padding: 12px 26px;
+  padding: 13px 22px;
   border-radius: 30px;
   font-size: 15px;
   cursor: pointer;
@@ -166,6 +172,7 @@ $transition: 0.35s ease;
   font-size: 18px;
   color: $text-muted;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* =========================
@@ -173,12 +180,8 @@ $transition: 0.35s ease;
 ========================= */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -194,13 +197,13 @@ $transition: 0.35s ease;
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   TABLET
 ========================= */
 
 @media (max-width: 768px) {
 
   .final-package {
-    padding: 60px 15px;
+    padding: 50px 15px;
 
     h2 {
       font-size: 26px;
@@ -219,20 +222,37 @@ $transition: 0.35s ease;
     }
   }
 
-  .whatsapp-btn {
-    padding: 12px;
-    font-size: 14px;
-  }
-
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 480px) {
 
+  .final-package {
+    padding: 40px 12px;
+  }
+
   .package-card {
     padding: 18px;
+    border-radius: 14px;
   }
 
   .back-btn {
+    font-size: 14px;
+  }
+
+  .whatsapp-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .package-card h3 {
+    font-size: 18px;
+  }
+
+  .package-card p {
     font-size: 14px;
   }
 

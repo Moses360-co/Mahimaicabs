@@ -1,196 +1,17 @@
-/* =====================
-   VARIABLES
-===================== */
-$bg-main: #ffffff;
-$bg-soft: #f7f9fc;
-$primary: #1f3b4d;
-$gold: #d4b35f;
-$text-dark: #2e2e2e;
-$text-muted: #6b7280;
-$shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-$radius: 18px;
-$transition: 0.35s ease;
-
-/* =====================
-   ANIMATIONS
-===================== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes imageZoom {
-  from {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* =====================
-   PAGE LAYOUT
-===================== */
-.more-details {
-  background: $bg-main;
-  padding: 24px;
-  min-height: 100vh;
-  animation: fadeUp 0.6s ease;
-}
-
-/* =====================
-   BACK BUTTON
-===================== */
-.more-details button:first-child {
-  background: transparent;
-  border: none;
-  color: $primary;
-  font-size: 15px;
-  cursor: pointer;
-  margin-bottom: 16px;
-  transition: $transition;
-
-  &:hover {
-    color: $gold;
-    transform: translateX(-4px);
-  }
-}
-
-/* =====================
-   TITLE
-===================== */
-.more-details h1 {
-  font-size: 32px;
-  color: $primary;
-  margin-bottom: 14px;
-  animation: fadeUp 0.7s ease;
-}
-
-/* =====================
-   IMAGE
-===================== */
-.more-details img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: $radius;
-  box-shadow: $shadow;
-  margin-bottom: 18px;
-  animation: imageZoom 0.8s ease;
-}
-
-/* =====================
-   DESCRIPTION
-===================== */
-.more-details p {
-  font-size: 16px;
-  color: $text-muted;
-  line-height: 1.7;
-  margin-bottom: 22px;
-  animation: fadeUp 0.9s ease;
-}
-
-/* =====================
-   SELECT VEHICLE BUTTON
-===================== */
-.more-details button:nth-of-type(2) {
-  background: linear-gradient(135deg, $primary, darken($primary, 8%));
-  color: #fff;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: $transition;
-  margin-bottom: 30px;
-
-  &:hover {
-    background: linear-gradient(135deg, $gold, darken($gold, 10%));
-    color: $primary;
-    transform: translateY(-3px);
-  }
-}
-
-/* =====================
-   POPULAR PLACES LIST
-===================== */
-.more-details ul {
-  background: $bg-soft;
-  padding: 22px;
-  border-radius: $radius;
-  box-shadow: $shadow;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  animation: fadeUp 1s ease;
-}
-
-.more-details li {
-  background: #fff;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-size: 14px;
-  color: $text-dark;
-  transition: $transition;
-
-  &:hover {
-    transform: translateY(-4px);
-    color: $gold;
-  }
-}
-
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-  .more-details h1 {
-    font-size: 26px;
-  }
-
-  .more-details img {
-    max-height: 280px;
-  }
-
-  .more-details p {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .more-details {
-    padding: 16px;
-  }
-
-  .more-details button:nth-of-type(2) {
-    width: 100%;
-    text-align: center;
-  }
-
-  .more-details ul {
-    grid-template-columns: 1fr;
-  }
-}
 /* ================= VARIABLES ================= */
+
 $bg-main: #ffffff;
 $bg-soft: #f7f9fc;
 $primary: #1f3b4d;
 $gold: #d4b35f;
 $text-dark: #2e2e2e;
 $text-muted: #6b7280;
-$shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+$shadow: 0 12px 28px rgba(0,0,0,0.1);
 $radius: 18px;
 $transition: 0.35s ease;
 
 /* ================= ANIMATIONS ================= */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -205,7 +26,7 @@ $transition: 0.35s ease;
 @keyframes zoomIn {
   from {
     opacity: 0;
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
   to {
     opacity: 1;
@@ -214,14 +35,18 @@ $transition: 0.35s ease;
 }
 
 /* ================= PAGE ================= */
+
 .more-details {
   background: $bg-main;
   min-height: 100vh;
-  padding: 28px;
+  padding: 24px;
+  max-width: 1100px;
+  margin: auto;
   animation: fadeUp 0.6s ease;
 }
 
 /* ================= BACK BUTTON ================= */
+
 .more-details > button:first-child {
   background: transparent;
   border: none;
@@ -233,21 +58,23 @@ $transition: 0.35s ease;
 
   &:hover {
     color: $gold;
-    transform: translateX(-5px);
+    transform: translateX(-4px);
   }
 }
 
 /* ================= TITLE ================= */
+
 .more-details h1 {
-  font-size: 34px;
+  font-size: 32px;
   color: $primary;
   margin-bottom: 16px;
-  animation: fadeUp 0.7s ease;
 }
 
-/* ================= HERO IMAGE ================= */
+/* ================= IMAGE ================= */
+
 .more-details img {
   width: 100%;
+  height: auto;
   max-height: 420px;
   object-fit: cover;
   border-radius: $radius;
@@ -257,62 +84,70 @@ $transition: 0.35s ease;
 }
 
 /* ================= DESCRIPTION ================= */
+
 .more-details p {
   font-size: 16px;
   color: $text-muted;
   line-height: 1.7;
   margin-bottom: 24px;
-  animation: fadeUp 0.9s ease;
 }
 
-/* ================= SELECT VEHICLE BUTTON ================= */
+/* ================= BUTTON ================= */
+
 .more-details > button:nth-of-type(2) {
-  background: linear-gradient(135deg, $primary, darken($primary, 10%));
+  background: linear-gradient(135deg, $primary, darken($primary, 8%));
   color: #fff;
   border: none;
-  padding: 13px 30px;
+  padding: 13px 28px;
   border-radius: 30px;
   font-size: 15px;
   cursor: pointer;
   transition: $transition;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 
   &:hover {
-    background: linear-gradient(135deg, $gold, darken($gold, 8%));
+    background: linear-gradient(135deg, $gold, darken($gold, 10%));
     color: $primary;
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 }
 
 /* ================= POPULAR PLACES ================= */
+
 .more-details ul {
   background: $bg-soft;
   padding: 24px;
   border-radius: $radius;
   box-shadow: $shadow;
   list-style: none;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
-  animation: fadeUp 1s ease;
 }
 
 .more-details li {
   background: #fff;
   padding: 12px 14px;
-  border-radius: 14px;
+  border-radius: 12px;
   font-size: 14px;
   color: $text-dark;
   transition: $transition;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     color: $gold;
   }
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
+
 @media (max-width: 768px) {
+
+  .more-details {
+    padding: 20px;
+  }
+
   .more-details h1 {
     font-size: 26px;
   }
@@ -324,19 +159,32 @@ $transition: 0.35s ease;
   .more-details p {
     font-size: 15px;
   }
+
 }
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 480px) {
+
   .more-details {
     padding: 16px;
   }
 
+  .more-details h1 {
+    font-size: 22px;
+  }
+
+  .more-details img {
+    max-height: 240px;
+  }
+
   .more-details > button:nth-of-type(2) {
     width: 100%;
-    text-align: center;
   }
 
   .more-details ul {
     grid-template-columns: 1fr;
+    padding: 18px;
   }
+
 }
