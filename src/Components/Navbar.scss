@@ -1,174 +1,187 @@
-/* NAVBAR */
+/* ======================
+   VARIABLES
+====================== */
+$primary: #0b1f33;
+$secondary: #102a43;
+$accent: #d4b35f;
+$text: #ffffff;
+$transition: 0.3s ease;
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-padding:10px 18px;
+  padding: 12px 20px;
+  background: $primary;
+  color: $text;
 
-background:#0b1f33;
-color:white;
+  position: sticky;
+  top: 0;
+  z-index: 3000;
 
-position:relative;
-z-index:3000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
-
-/* LOGO */
-
-.logo{
-height:38px;
-margin-right:8px;
+/* ======================
+   LOGO
+====================== */
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-.logo-link{
-display:flex;
-align-items:center;
-text-decoration:none;
-color:white;
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $text;
 }
 
-.logo-text{
-font-size:17px;
-font-weight:600;
+.logo {
+  height: 40px;
+  margin-right: 10px;
 }
 
-
-
-/* MENU */
-
-.nav-menu{
-list-style:none;
-
-display:flex;
-gap:22px;
-
-margin:0;
-padding:0;
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.nav-menu li a{
-text-decoration:none;
-color:white;
+/* ======================
+   MENU
+====================== */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 
-display:flex;
-align-items:center;
-gap:6px;
+  li {
+    a {
+      text-decoration: none;
+      color: $text;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      transition: $transition;
+      position: relative;
 
-font-size:15px;
+      &:hover {
+        color: $accent;
+      }
+    }
 
-transition:0.2s;
+    &.active a {
+      color: $accent;
+      font-weight: 600;
+    }
+  }
 }
 
-.nav-menu li a:hover{
-opacity:0.8;
+/* ======================
+   MENU ICON
+====================== */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: $transition;
+
+  &.open {
+    transform: rotate(90deg);
+  }
 }
 
+/* ======================
+   MOBILE
+====================== */
+@media (max-width: 768px) {
 
+  .menu-icon {
+    display: block;
+    z-index: 3200;
+  }
 
-/* MENU ICON */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
 
-.menu-icon{
-display:none;
+    width: 75%;
+    max-width: 260px;
+    height: 100vh;
 
-font-size:24px;
-cursor:pointer;
+    background: $secondary;
 
-transition:0.25s;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 20px;
+    gap: 25px;
+
+    transition: right 0.35s ease;
+    z-index: 3100;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li a {
+    font-size: 16px;
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+
+    z-index: 3000;
+  }
 }
 
+/* ======================
+   SMALL MOBILE
+====================== */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 15px;
+  }
 
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.nav-menu{
-
-position:fixed;
-
-top:0;
-right:-100%;
-
-width:70%;
-max-width:240px;
-
-height:100vh;
-
-background:#102a43;
-
-flex-direction:column;
-
-padding-top:75px;
-padding-left:20px;
-
-gap:20px;
-
-/* smooth slide */
-transition:right 0.35s ease;
-
-z-index:3100;
-
+  .logo {
+    height: 34px;
+  }
 }
 
-.nav-menu.active{
-right:0;
+/* ======================
+   LARGE SCREENS
+====================== */
+@media (min-width: 1200px) {
+  .nav-menu {
+    gap: 30px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
 }
 
-
-
-/* icon animation */
-
-.menu-icon{
-display:block;
-z-index:3200;
-
-transition:transform 0.3s ease;
-}
-
-.menu-icon.open{
-transform:rotate(90deg);
-}
-
-
-
-/* overlay fade */
-
-.overlay{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.45);
-
-/* fade effect */
-animation:fadeIn 0.3s ease;
-
-z-index:3000;
-
-}
-
-}
-
-
-
-/* fade animation */
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-}
-
-to{
-opacity:1;
-}
-
+/* ======================
+   ANIMATION
+====================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

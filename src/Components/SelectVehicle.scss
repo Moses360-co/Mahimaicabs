@@ -1,33 +1,28 @@
 /* ======================
    VARIABLES
 ====================== */
-
 $bg-main: #ffffff;
-$bg-soft: #f4f6f9;
 $primary: #1f3b4d;
 $gold: #d4b35f;
 $text-dark: #2e2e2e;
-$text-muted: #6b7280;
-$shadow: 0 10px 25px rgba(0,0,0,0.08);
+$shadow: 0 8px 20px rgba(0,0,0,0.08);
 $radius: 16px;
 $transition: 0.3s ease;
 
 /* ======================
    PAGE WRAPPER
 ====================== */
-
 .select-vehicle-page {
   background: $bg-main;
   min-height: 100vh;
-  padding: 40px 25px;
-  max-width: 1200px;
+  padding: 40px 20px;
+  max-width: 1300px;
   margin: auto;
 }
 
 /* ======================
    BACK BUTTON
 ====================== */
-
 .btn-back {
   background: transparent;
   border: none;
@@ -45,7 +40,6 @@ $transition: 0.3s ease;
 /* ======================
    TITLE
 ====================== */
-
 .select-vehicle-page h2 {
   font-size: 30px;
   color: $primary;
@@ -54,9 +48,8 @@ $transition: 0.3s ease;
 }
 
 /* ======================
-   VEHICLE GRID
+   GRID (AUTO RESPONSIVE 🔥)
 ====================== */
-
 .vehicle-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -64,104 +57,130 @@ $transition: 0.3s ease;
 }
 
 /* ======================
-   VEHICLE CARD
+   CARD
 ====================== */
-
 .vehicle-card {
-  background: $bg-soft;
+  background: #fff;
   border-radius: $radius;
   box-shadow: $shadow;
-  padding: 18px;
+  padding: 16px;
   text-align: center;
   transition: $transition;
 
   display: flex;
   flex-direction: column;
-}
+  justify-content: space-between;
 
-.vehicle-card:hover {
-  transform: translateY(-6px);
+  &:hover {
+    transform: translateY(-8px);
+  }
 }
 
 /* ======================
-   VEHICLE IMAGE
+   IMAGE
 ====================== */
-
 .vehicle-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-/* ======================
-   VEHICLE NAME
-====================== */
-
-.vehicle-card h3 {
-  font-size: 18px;
-  color: $text-dark;
-  margin-bottom: 15px;
-  flex-grow: 1;
-}
-
-/* ======================
-   BUTTON
-====================== */
-
-.select-btn {
-  background: linear-gradient(135deg, $primary, darken($primary, 8%));
-  color: #fff;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 25px;
-  font-size: 14px;
-  cursor: pointer;
+  margin-bottom: 12px;
   transition: $transition;
 }
 
-.select-btn:hover {
-  background: linear-gradient(135deg, $gold, darken($gold, 8%));
-  color: $primary;
+/* 🔥 Image hover zoom */
+.vehicle-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ======================
+   TITLE
+====================== */
+.vehicle-card h3 {
+  font-size: 18px;
+  color: $text-dark;
+  margin-bottom: 12px;
+}
+
+/* ======================
+   BUTTON (UPGRADED 🔥)
+====================== */
+.select-btn {
+  background: linear-gradient(135deg, $primary, #2c5364);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: $transition;
+  width: 100%;
+  font-weight: 500;
+
+  &:hover {
+    background: linear-gradient(135deg, $gold, #f1c76d);
+    color: $primary;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ======================
+   LARGE SCREENS
+====================== */
+@media (min-width: 1200px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* ======================
    TABLET
 ====================== */
-
-@media (max-width: 768px) {
-
+@media (max-width: 992px) {
   .select-vehicle-page {
-    padding: 30px 18px;
+    padding: 30px 15px;
   }
 
   .select-vehicle-page h2 {
     font-size: 26px;
   }
-
-  .vehicle-card img {
-    height: 180px;
-  }
-
 }
 
 /* ======================
    MOBILE
 ====================== */
-
-@media (max-width: 480px) {
-
+@media (max-width: 576px) {
   .select-vehicle-page {
-    padding: 20px 14px;
+    padding: 20px 12px;
+  }
+
+  .select-vehicle-page h2 {
+    font-size: 22px;
   }
 
   .vehicle-card img {
     height: 160px;
   }
 
-  .select-btn {
-    width: 100%;
+  .vehicle-card {
+    padding: 12px;
   }
 
+  .select-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* ======================
+   EXTRA SMALL
+====================== */
+@media (max-width: 360px) {
+  .vehicle-card img {
+    height: 140px;
+  }
 }

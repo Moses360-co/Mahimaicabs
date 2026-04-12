@@ -1,56 +1,37 @@
 /* =====================
    VARIABLES
 ===================== */
-
 $bg-main: #ffffff;
 $bg-soft: #f7f9fc;
 $primary: #1f3b4d;
 $gold: #d4b35f;
 $text-dark: #2e2e2e;
 $text-muted: #6b7280;
-$shadow: 0 12px 28px rgba(0,0,0,0.1);
+$shadow: 0 10px 25px rgba(0,0,0,0.08);
 $radius: 18px;
-$transition: 0.35s ease;
+$transition: 0.3s ease;
 
 /* =====================
-   ANIMATION
+   PAGE
 ===================== */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =====================
-   PAGE LAYOUT
-===================== */
-
-.select-days {
+.select-days-page {
   background: $bg-main;
   min-height: 100vh;
-  padding: 28px;
-  max-width: 900px;
+  padding: 40px 20px;
+  max-width: 1100px;
   margin: auto;
-  animation: fadeUp 0.6s ease;
 }
 
 /* =====================
    BACK BUTTON
 ===================== */
-
-.select-days .back-btn {
+.btn-back {
   background: transparent;
   border: none;
   color: $primary;
   font-size: 15px;
   cursor: pointer;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   transition: $transition;
 
   &:hover {
@@ -62,27 +43,39 @@ $transition: 0.35s ease;
 /* =====================
    TITLE
 ===================== */
-
-.select-days h2 {
+.select-days-page h2 {
   font-size: 30px;
   color: $primary;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* =====================
-   PACKAGE CARD
+   GRID (AUTO RESPONSIVE 🔥)
 ===================== */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
 
+/* =====================
+   CARD
+===================== */
 .day-card {
   background: $bg-soft;
   border-radius: $radius;
   box-shadow: $shadow;
   padding: 22px;
-  margin-bottom: 24px;
+  text-align: center;
   transition: $transition;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
   }
 
   h3 {
@@ -91,77 +84,90 @@ $transition: 0.35s ease;
     margin-bottom: 10px;
   }
 
-  p {
-    font-size: 15px;
-    color: $text-muted;
-    margin-bottom: 6px;
-  }
-
   .price {
+    font-size: 16px;
     font-weight: 600;
     color: $primary;
-    margin-top: 10px;
+    margin-bottom: 15px;
   }
 }
 
 /* =====================
-   SELECT BUTTON
+   BUTTON (NEW STYLE 🔥)
 ===================== */
-
 .select-btn {
-  margin-top: 14px;
-  background: linear-gradient(135deg, $primary, darken($primary, 10%));
+  margin-top: auto;
+  background: linear-gradient(135deg, #1f3b4d, #2c5364);
   color: #fff;
   border: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-size: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
   cursor: pointer;
   transition: $transition;
+  width: 100%;
+  font-weight: 500;
 
   &:hover {
-    background: linear-gradient(135deg, $gold, darken($gold, 8%));
+    background: linear-gradient(135deg, $gold, #f1c76d);
     color: $primary;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* =====================
+   LARGE SCREENS
+===================== */
+@media (min-width: 1200px) {
+  .days-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* =====================
    TABLET
 ===================== */
-
 @media (max-width: 768px) {
-
-  .select-days {
-    padding: 22px;
+  .select-days-page {
+    padding: 30px 15px;
   }
 
-  .select-days h2 {
+  .select-days-page h2 {
     font-size: 26px;
   }
-
 }
 
 /* =====================
    MOBILE
 ===================== */
-
 @media (max-width: 480px) {
-
-  .select-days {
-    padding: 16px;
+  .select-days-page {
+    padding: 20px 12px;
   }
 
-  .select-days h2 {
+  .select-days-page h2 {
     font-size: 22px;
   }
 
   .day-card {
-    padding: 18px;
+    padding: 16px;
   }
 
   .select-btn {
-    width: 100%;
+    font-size: 13px;
+    padding: 10px;
   }
+}
 
+/* =====================
+   EXTRA SMALL
+===================== */
+@media (max-width: 360px) {
+  .day-card h3 {
+    font-size: 18px;
+  }
 }

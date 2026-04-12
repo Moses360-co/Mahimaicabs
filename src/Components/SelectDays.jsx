@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import tourPackages from "./moreDetailsData";
-import "./SelectDays.css";
+import "./SelectDays.scss";
 
 const SelectDays = () => {
   const { id, vehicleId } = useParams();
@@ -15,30 +15,35 @@ const SelectDays = () => {
   if (!vehicle) return <p>Vehicle not found</p>;
 
   return (
-    <section className="select-days">
-      <button className="back-btn" onClick={() => navigate(-1)}>
+    <section className="select-days-page">
+      <button className="btn-back" onClick={() => navigate(-1)}>
         ← Back
       </button>
 
       <h2>{vehicle.model}</h2>
 
-      {vehicle.pricing.map(pkg => (
-        <div className="day-card" key={pkg.id}>
-          <h3>{pkg.days}</h3>
-         
-          
+      {/* ✅ GRID ADDED */}
+      <div className="days-grid">
+        {vehicle.pricing.map(pkg => (
+          <div className="day-card" key={pkg.id}>
+            <h3>{pkg.days}</h3>
 
-          <button
-            onClick={() =>
-              navigate("/final-package", {
-                state: { vehicle, pkg }
-              })
-            }
-          >
-            Select
-          </button>
-        </div>
-      ))}
+            {/* Optional details */}
+            {pkg.price && <p className="price">₹ {pkg.price}</p>}
+
+            <button
+              className="select-btn"
+              onClick={() =>
+                navigate("/final-package", {
+                  state: { vehicle, pkg }
+                })
+              }
+            >
+              Choose Plan
+            </button>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
