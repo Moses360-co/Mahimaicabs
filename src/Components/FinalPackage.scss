@@ -58,7 +58,7 @@ $transition: 0.3s ease;
 
   display: flex;
   flex-direction: column;
-  align-items: center; /* 🔥 center button */
+  align-items: center;
   gap: 10px;
 
   background: $bg-main;
@@ -67,11 +67,14 @@ $transition: 0.3s ease;
 
   text-align: center;
 
+  /* 🔥 IMAGE FIX (NO CROP) */
   img {
     width: 100%;
-    height: clamp(120px, 30vw, 180px);
-    object-fit: cover;
+    height: 140px;            /* ✅ fixed clean height */
+    object-fit: contain;      /* ✅ no cutting */
+    background: #f2f2f2;      /* ✅ fills empty space */
     border-radius: 10px;
+    padding: 5px;             /* small spacing */
   }
 
   h3 {
@@ -96,7 +99,7 @@ $transition: 0.3s ease;
   }
 }
 
-/* ================= SMALL BUTTON FIX ================= */
+/* ================= BUTTON ================= */
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
@@ -116,10 +119,9 @@ $transition: 0.3s ease;
   cursor: pointer;
   transition: $transition;
 
-  width: auto;       /* 🔥 FIX width */
+  width: auto;
   max-width: 100%;
-
-  white-space: nowrap; /* keep text in one line */
+  white-space: nowrap;
 
   &:hover {
     background: linear-gradient(135deg, $gold, #f1c76d);
@@ -151,12 +153,8 @@ $transition: 0.3s ease;
 
 /* ================= MOBILE ================= */
 @media (max-width: 480px) {
-  .final-package {
-    padding: 15px 10px;
-  }
-
-  .package-card {
-    padding: 12px;
+  .package-card img {
+    height: 120px;   /* 🔥 smaller */
   }
 
   .whatsapp-btn {
@@ -167,6 +165,10 @@ $transition: 0.3s ease;
 
 /* ================= EXTRA SMALL ================= */
 @media (max-width: 360px) {
+  .package-card img {
+    height: 100px;   /* 🔥 very small */
+  }
+
   .whatsapp-btn {
     font-size: 10px;
     padding: 4px 6px;
